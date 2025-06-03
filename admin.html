@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>管理禮物頁面</title>
     <style>
         body {
@@ -305,7 +308,7 @@
         let filesSelected = { pdf: false, image: false };
 
         // 初始化 repo 資訊
-        fetch('data.json')
+        fetch(`data.json?bust=${Date.now()}`)
             .then(res => res.json())
             .then(data => {
                 owner = data.owner;
